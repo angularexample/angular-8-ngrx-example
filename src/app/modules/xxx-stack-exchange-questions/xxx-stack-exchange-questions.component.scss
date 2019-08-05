@@ -1,0 +1,32 @@
+@import "~src/assets/styles/partials/colors";
+
+.xxx-question-container {
+  background-color: $bg-color-container;
+}
+
+.xxx-questions-container {
+  margin: .5rem;
+}
+
+.xxx-results-currrent-page {
+  margin-right: 1rem;
+}
+
+.xxx-results-currrent-page-caption {
+  margin-right: 1rem;
+}
+
+.xxx-results-footer {
+  background-color: $bg-color-container;
+  height: 2rem;
+}
+
+.xxx-results-paging {
+  margin-right: 2rem;
+  width: 8rem;
+}
+
+.xxx-spinner-container {
+  margin-top: 2rem;
+  width: 100%;
+}

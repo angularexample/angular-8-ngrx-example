@@ -1,0 +1,10 @@
+<form #formcontrol="ngForm" (ngSubmit)="onSearchClick()">
+  <input [(ngModel)]="searchText" aria-labelledby="enter search text" autofocus class="form-control xxx-search-box-input"
+         name="searchText" (keyup)="onInputKeyUp()"
+         placeholder="Enter Search Text" required="" type="search">
+  <button class="xxx-search-box-button"
+          [disabled]="isButtonDisabled || isSearchTextNotChanged || !formcontrol.form.valid" mat-icon-button
+          title="Do Search">
+    <mat-icon>search</mat-icon>
+  </button>
+</form>

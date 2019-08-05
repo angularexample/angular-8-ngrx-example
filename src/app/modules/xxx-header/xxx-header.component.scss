@@ -1,0 +1,21 @@
+@import "~src/assets/styles/partials/colors";
+
+:host mat-toolbar {
+  background-color: $bg-color-header;
+  padding-top: .4rem;
+}
+
+.xxx-header-title {
+  font-size: 1.2rem;
+}
+
+.xxx-header-logo {
+  padding: .4rem;
+  max-width: 4rem;
+  min-width: 3rem;
+  width: 13vw;
+}
+
+.xxx-header-row-2 {
+  height: 1.2rem;
+}
