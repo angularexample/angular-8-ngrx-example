@@ -9,7 +9,7 @@
       "projectType": "application",
       "prefix": "xxx",
       "schematics": {
-        "@schematics/angular:component": {
+        "@ngrx/schematics:component": {
           "changeDetection": "OnPush",
           "styleext": "scss"
         }
