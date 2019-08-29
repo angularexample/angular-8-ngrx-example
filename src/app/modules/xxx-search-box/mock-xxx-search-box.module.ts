@@ -7,5 +7,5 @@ import {XxxSearchBoxComponent} from './mock-xxx-search-box.component';
   exports: [XxxSearchBoxComponent]
 })
 
-export class MockXxxSearchBoxModule {
+export class XxxSearchBoxModule {
 }

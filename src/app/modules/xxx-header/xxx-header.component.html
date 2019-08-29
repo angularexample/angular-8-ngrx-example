@@ -1,13 +1,11 @@
 <mat-toolbar>
-  <mat-toolbar-row [fxFlex]="" fxLayoutAlign="space-between center">
+  <mat-toolbar-row>
     <a href="https://github.com/angularexample" title="https://github.com/angularexample">
-      <img alt="AngularExample Logo" class="xxx-header-logo" src="/assets/images/angular-example-logo.svg">
+      <img alt="AngularExample Logo" class="xxx-header-logo" src="assets/images/angular-example-logo.svg">
     </a>
-    <span class="xxx-header-title">StackExchange Search</span>
-    <span *ngIf="mediaObserver.isActive('xs')">&nbsp;</span>
-    <xxx-search-box *ngIf="!mediaObserver.isActive('xs')" [fxLayout]="row" fxLayoutAlign="end center"></xxx-search-box>
-  </mat-toolbar-row>
-  <mat-toolbar-row *ngIf="mediaObserver.isActive('xs')" class="xxx-header-row-2" fxLayout="row" fxLayoutAlign="center end">
-    <xxx-search-box></xxx-search-box>
+    <span class="xxx-header-title">Angular 8 Example App</span>
+    <div class="xxx-search-box-container">
+      <xxx-search-box></xxx-search-box>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

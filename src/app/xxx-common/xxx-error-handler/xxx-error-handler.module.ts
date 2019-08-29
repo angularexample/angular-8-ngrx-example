@@ -10,8 +10,7 @@ import {XxxErrorHandler} from './xxx-error-handler.service';
     XxxLogModule
   ],
   providers: [
-    {provide: ErrorHandler, useClass: XxxErrorHandler},
-    XxxErrorHandler
+    {provide: ErrorHandler, useClass: XxxErrorHandler}
   ]
 })
 export class XxxErrorHandlerModule {

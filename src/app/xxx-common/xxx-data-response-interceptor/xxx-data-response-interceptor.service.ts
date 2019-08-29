@@ -2,12 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-// import {environment} from '../../../environments/environment';
+// import {environment} from '@env/environment';
+
 import {XxxAlertType} from '../xxx-alert/xxx-alert.enum';
 import {XxxMessage} from '../xxx-message/xxx-message';
 import {XxxMessageService} from '../xxx-message/xxx-message.service';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class XxxDataResponseInterceptor implements HttpInterceptor {
   constructor(private xxxMessageService: XxxMessageService) {
   }

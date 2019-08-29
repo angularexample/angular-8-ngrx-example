@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-8-example-app": {
+    "angular-8-ngrx-example": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-8-example-app",
+            "outputPath": "dist/angular-8-ngrx-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,6 +29,11 @@
             "styles": [
               "src/assets/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -61,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-8-example-app:build"
+            "browserTarget": "angular-8-ngrx-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-8-example-app:build:production"
+              "browserTarget": "angular-8-ngrx-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-8-example-app:build"
+            "browserTarget": "angular-8-ngrx-example:build"
           }
         },
         "test": {
@@ -95,6 +100,11 @@
             "styles": [
               "src/assets/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "scripts": [],
             "assets": [
               "src/favicon.ico",
@@ -113,10 +123,14 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },
-    "angular-8-example-app-e2e": {
+    "angular-8-ngrx-example-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -125,11 +139,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-8-example-app:serve"
+            "devServerTarget": "angular-8-ngrx-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-8-example-app:serve:production"
+              "devServerTarget": "angular-8-ngrx-example:serve:production"
             }
           }
         },
@@ -145,5 +159,5 @@
       }
     }
   },
-  "defaultProject": "angular-8-example-app"
+  "defaultProject": "angular-8-ngrx-example"
 }

@@ -1,11 +1,11 @@
 import {CommonModule} from '@angular/common';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {FlexLayoutModule, MediaObserver} from '@angular/flex-layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
-import {MockMediaObserver} from '../../../mocks/angular/mock-flex-layout';
+import {MockMediaObserver} from '@app/mocks/angular/mock-flex-layout';
 import {XxxHeaderComponent} from './xxx-header.component';
-import {XxxSearchBoxComponent} from '../xxx-search-box/mock-xxx-search-box.component';
+import {XxxSearchBoxComponent} from '@app/modules/xxx-search-box/mock-xxx-search-box.component';
 
 describe('XxxHeaderComponent', () => {
   let component: XxxHeaderComponent;
@@ -36,6 +36,6 @@ describe('XxxHeaderComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeDefined();
   });
 });

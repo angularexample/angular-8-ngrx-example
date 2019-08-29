@@ -1,5 +1,4 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {MediaObserver} from '@angular/flex-layout';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,6 +8,4 @@ import {MediaObserver} from '@angular/flex-layout';
 })
 
 export class XxxHeaderComponent {
-  constructor(public mediaObserver: MediaObserver) {
-  }
 }

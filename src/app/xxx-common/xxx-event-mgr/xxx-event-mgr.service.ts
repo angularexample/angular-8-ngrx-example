@@ -2,14 +2,14 @@ import {Injectable, OnDestroy} from '@angular/core';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 
-import {environment} from '../../../environments/environment';
+import {environment} from '@env/environment';
 import {XxxDataService} from '../xxx-data/xxx-data.service';
 import {XxxEventAction, XxxEventConfig, XxxEventRoute} from './xxx-event.interface';
 import {XxxMessage} from '../xxx-message/xxx-message';
 import {XxxMessageService} from '../xxx-message/xxx-message.service';
 import {XxxStateStoreService} from '../xxx-state-store/xxx-state-store.service';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class XxxEventMgrService implements OnDestroy {
   private $data: Subscription;
   private eventConfigs: XxxEventConfig[];

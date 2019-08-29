@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 
-import {XxxEventMgrService, XxxMessageService, XxxStateStoreService} from '../../xxx-common';
+import {XxxSearchService} from '@app/modules/xxx-search/xxx-search.service';
+import {XxxEventMgrService, XxxMessageService, XxxStateStoreService} from '@app/xxx-common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,7 +11,7 @@ import {XxxEventMgrService, XxxMessageService, XxxStateStoreService} from '../..
   styleUrls: ['./xxx-search-box.component.scss']
 })
 
-export class XxxSearchBoxComponent implements OnDestroy {
+export class XxxSearchBoxComponent implements OnDestroy, OnInit {
   isButtonDisabled = false;
   isSearchTextNotChanged = true;
   searchText: string;
@@ -21,8 +22,12 @@ export class XxxSearchBoxComponent implements OnDestroy {
       private changeDetectorRef: ChangeDetectorRef,
       private xxxEventMgrService: XxxEventMgrService,
       private xxxMessageService: XxxMessageService,
+      private xxxSearchService: XxxSearchService,
       private xxxStateStoreService: XxxStateStoreService
   ) {
+  }
+
+  ngOnInit(): void {
     this.subscribeToMessages();
   }
 

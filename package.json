@@ -1,6 +1,8 @@
 {
   "name": "angular-8-ngrx-example",
-  "version": "1.0.0",
+  "description": "Angular 8 NgRx Example. NgRx Redux. Routing and Http. Architecture for Large Scale. Angular Best Practices.",
+  "author": "AngularExample https://github.com/angularexample",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

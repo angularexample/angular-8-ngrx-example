@@ -6,7 +6,7 @@ import {XxxMessage} from './xxx-message';
 
 type MessageCallback = (payload: any) => void;
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class XxxMessageService {
   private handler = new Subject<XxxMessage>();
 

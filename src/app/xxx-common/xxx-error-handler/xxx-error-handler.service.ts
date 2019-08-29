@@ -5,6 +5,12 @@ import {XxxAlertType} from '../xxx-alert/xxx-alert.enum';
 import {XxxLogEntry} from '../xxx-log/xxx-log-entry';
 import {XxxLogService} from '../xxx-log/xxx-log.service';
 
+/**
+ * Note: There is no providedIn or providers for this class
+ * because it is like a mock service.
+ * You must import the XxxErrorHandlerModule at the app module.
+ * The XxxErrorHandlerModule injects this service as a mock for the built in Angular ErrorHandler.
+ */
 @Injectable()
 export class XxxErrorHandler implements ErrorHandler {
   constructor(
