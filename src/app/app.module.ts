@@ -16,6 +16,8 @@ import { XxxHeaderModule } from '@app/modules/xxx-header/xxx-header.module';
 import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.module';
 import { XxxQuestionsPageModule } from '@app/modules/xxx-questions-page/xxx-questions-page.module';
 import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -42,7 +44,8 @@ import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
         strictActionImmutability: true,
       }
     }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forRoot([AppEffects])
   ]
 })
 
