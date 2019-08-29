@@ -1,6 +1,6 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {XxxStateStoreService} from './xxx-state-store.service';
+import { XxxStateStoreService } from './xxx-state-store.service';
 
 describe('XxxStateStoreService', () => {
   let spyDeleteAll: jasmine.Spy;

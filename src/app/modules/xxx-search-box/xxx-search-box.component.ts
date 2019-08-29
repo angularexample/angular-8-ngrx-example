@@ -1,8 +1,8 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import {XxxSearchService} from '@app/modules/xxx-search/xxx-search.service';
-import {XxxEventMgrService, XxxMessageService, XxxStateStoreService} from '@app/xxx-common';
+import { XxxSearchService } from '@app/modules/xxx-search/xxx-search.service';
+import { XxxEventMgrService, XxxMessageService, XxxStateStoreService } from '@app/xxx-common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

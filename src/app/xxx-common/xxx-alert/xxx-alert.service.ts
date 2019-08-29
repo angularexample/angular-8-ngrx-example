@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {MatSnackBar, MatSnackBarConfig, MatSnackBarRef} from '@angular/material/snack-bar';
+import { Injectable } from '@angular/core';
+import { MatSnackBar, MatSnackBarConfig, MatSnackBarRef } from '@angular/material/snack-bar';
 
-import {XxxAlertComponent} from './xxx-alert.component';
-import {XxxAlertType} from './xxx-alert.enum';
+import { XxxAlertComponent } from './xxx-alert.component';
+import { XxxAlertType } from './xxx-alert.enum';
 
 @Injectable({providedIn: 'root'})
 export class XxxAlertService {

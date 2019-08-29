@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {XxxPageNotFoundPageComponent} from './xxx-page-not-found-page.component';
+import { XxxPageNotFoundPageComponent } from './xxx-page-not-found-page.component';
 
 @NgModule({
   declarations: [XxxPageNotFoundPageComponent],

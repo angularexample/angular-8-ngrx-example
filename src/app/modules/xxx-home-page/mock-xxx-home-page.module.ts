@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {XxxHomePageComponent} from './mock-xxx-home-page.component';
+import { XxxHomePageComponent } from './mock-xxx-home-page.component';
 
 @NgModule({
   declarations: [XxxHomePageComponent],

@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {XxxSearchBoxComponent} from './mock-xxx-search-box.component';
+import { XxxSearchBoxComponent } from './mock-xxx-search-box.component';
 
 @NgModule({
   declarations: [XxxSearchBoxComponent],

@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {XxxHomePageComponent} from './xxx-home-page.component';
-import {XxxHomePageRoutingModule} from './xxx-home-page-routing.module';
+import { XxxHomePageComponent } from './xxx-home-page.component';
+import { XxxHomePageRoutingModule } from './xxx-home-page-routing.module';
 
 @NgModule({
   declarations: [XxxHomePageComponent],

@@ -1,12 +1,12 @@
-import {CommonModule} from '@angular/common';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_SNACK_BAR_DATA, MatSnackBar, MatSnackBarModule, MatSnackBarRef } from '@angular/material/snack-bar';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
-import {XxxAlertComponent} from './xxx-alert.component';
-import {XxxAlertService} from './xxx-alert.service';
+import { XxxAlertComponent } from './xxx-alert.component';
+import { XxxAlertService } from './xxx-alert.service';
 
 describe('XxxAlertService', () => {
   let alertType: string;

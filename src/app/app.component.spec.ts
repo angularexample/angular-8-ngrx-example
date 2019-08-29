@@ -1,21 +1,21 @@
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {Router, Routes} from '@angular/router';
-import {RouterTestingModule} from '@angular/router/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { Router, Routes } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import {AppComponent} from './app.component';
-import {MockXxxAlertService} from '@app/xxx-common/xxx-alert/mock-xxx-alert.service';
-import {MockXxxErrorHandler} from '@app/xxx-common/xxx-error-handler/mock-xxx-error-handler';
-import {MockXxxHeaderModule} from '@app/modules/xxx-header/mock-xxx-header.module';
-import {MockXxxLogService} from '@app/xxx-common/xxx-log/mock-xxx-log.service';
-import {XxxAlertService} from '@app/xxx-common/xxx-alert/xxx-alert.service';
-import {XxxErrorHandler} from '@app/xxx-common/xxx-error-handler/xxx-error-handler.service';
-import {XxxHomePageComponent} from '@app/modules/xxx-home-page/mock-xxx-home-page.component';
-import {XxxLogService} from '@app/xxx-common/xxx-log/xxx-log.service';
-import {XxxMessage} from '@app/xxx-common/xxx-message/xxx-message';
-import {XxxMessageService} from '@app/xxx-common/xxx-message/xxx-message.service';
-import {XxxPageNotFoundPageComponent} from '@app/modules/xxx-page-not-found-page/mock-xxx-page-not-found-page.component';
+import { AppComponent } from './app.component';
+import { MockXxxAlertService } from '@app/xxx-common/xxx-alert/mock-xxx-alert.service';
+import { MockXxxErrorHandler } from '@app/xxx-common/xxx-error-handler/mock-xxx-error-handler';
+import { MockXxxHeaderModule } from '@app/modules/xxx-header/mock-xxx-header.module';
+import { MockXxxLogService } from '@app/xxx-common/xxx-log/mock-xxx-log.service';
+import { XxxAlertService } from '@app/xxx-common/xxx-alert/xxx-alert.service';
+import { XxxErrorHandler } from '@app/xxx-common/xxx-error-handler/xxx-error-handler.service';
+import { XxxHomePageComponent } from '@app/modules/xxx-home-page/mock-xxx-home-page.component';
+import { XxxLogService } from '@app/xxx-common/xxx-log/xxx-log.service';
+import { XxxMessage } from '@app/xxx-common/xxx-message/xxx-message';
+import { XxxMessageService } from '@app/xxx-common/xxx-message/xxx-message.service';
+import { XxxPageNotFoundPageComponent } from '@app/modules/xxx-page-not-found-page/mock-xxx-page-not-found-page.component';
 
 class XxxLogEntry {
   constructor(message: string, level: any) {

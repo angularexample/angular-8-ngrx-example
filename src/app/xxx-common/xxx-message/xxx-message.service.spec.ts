@@ -1,8 +1,8 @@
-import {TestBed} from '@angular/core/testing';
-import {Subscription} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
+import { Subscription } from 'rxjs';
 
-import {XxxMessage} from './xxx-message';
-import {XxxMessageService} from './xxx-message.service';
+import { XxxMessage } from './xxx-message';
+import { XxxMessageService } from './xxx-message.service';
 
 describe('XxxMessageService', () => {
   let xxxMessageService: XxxMessageService;

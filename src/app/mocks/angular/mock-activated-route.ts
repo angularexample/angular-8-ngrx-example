@@ -1,4 +1,4 @@
-import {of} from 'rxjs';
+import { of } from 'rxjs';
 
 export const mockRouteParamId = 'id-test';
 

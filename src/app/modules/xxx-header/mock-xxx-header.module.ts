@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {XxxHeaderComponent} from './mock-xxx-header.component';
+import { XxxHeaderComponent } from './mock-xxx-header.component';
 
 @NgModule({
   declarations: [XxxHeaderComponent],

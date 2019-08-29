@@ -1,7 +1,7 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {XxxLogEntry} from './xxx-log-entry';
-import {XxxLogService} from './xxx-log.service';
+import { XxxLogEntry } from './xxx-log-entry';
+import { XxxLogService } from './xxx-log.service';
 
 describe('XxxLogService', () => {
   let spyConsoleLog: jasmine.Spy;

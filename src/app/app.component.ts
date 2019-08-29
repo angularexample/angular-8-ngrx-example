@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import {XxxAlertService, XxxLogEntry, XxxLogLevelEnum, XxxLogService, XxxMessageService} from '@app/xxx-common';
+import { XxxAlertService, XxxLogEntry, XxxLogLevelEnum, XxxLogService, XxxMessageService } from '@app/xxx-common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

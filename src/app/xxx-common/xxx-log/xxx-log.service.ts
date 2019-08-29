@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {XxxLogEntry} from './xxx-log-entry';
+import { XxxLogEntry } from './xxx-log-entry';
 
 /**
  * In full scale app, this service will use the data service to write log entries to backend.

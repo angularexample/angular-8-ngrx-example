@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {XxxEventMgrModule, XxxMessageModule, XxxStateStoreModule} from '@app/xxx-common';
+import { XxxEventMgrModule, XxxMessageModule, XxxStateStoreModule } from '@app/xxx-common';
 
 @NgModule({
   imports: [

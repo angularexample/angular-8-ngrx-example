@@ -27,7 +27,8 @@
         </div>
         <div [innerHtml]="question.body" class="xxx-question-body"></div>
       </div>
-      <div *ngFor="let answer of answers" [ngClass]="{'xxx-answer-accepted':answer.is_accepted,'xxx-answer-not-accepted':!answer.is_accepted}"
+      <div *ngFor="let answer of answers"
+           [ngClass]="{'xxx-answer-accepted':answer.is_accepted,'xxx-answer-not-accepted':!answer.is_accepted}"
            class="xxx-answer-container">
         <div>
           <span class="xxx-answer-caption">Score: </span>

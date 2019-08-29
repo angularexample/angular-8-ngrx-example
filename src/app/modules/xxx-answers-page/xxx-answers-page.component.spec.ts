@@ -1,17 +1,17 @@
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {ActivatedRoute} from '@angular/router';
-import {RouterTestingModule} from '@angular/router/testing';
-import {of, throwError} from 'rxjs';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { of, throwError } from 'rxjs';
 
-import {MockActivatedRouteWithId, mockRouteParamId} from '@app/mocks/angular/mock-activated-route';
-import {MockXxxAlertService, MockXxxDataService, MockXxxEventMgrService, MockXxxStateStoreService} from '@app/xxx-common/test';
-import {XxxAlertService, XxxDataService, XxxEventMgrService, XxxStateStoreService} from '@app/xxx-common';
-import {XxxAnswersPageComponent} from './xxx-answers-page.component';
+import { MockActivatedRouteWithId, mockRouteParamId } from '@app/mocks/angular/mock-activated-route';
+import { MockXxxAlertService, MockXxxDataService, MockXxxEventMgrService, MockXxxStateStoreService } from '@app/xxx-common/test';
+import { XxxAlertService, XxxDataService, XxxEventMgrService, XxxStateStoreService } from '@app/xxx-common';
+import { XxxAnswersPageComponent } from './xxx-answers-page.component';
 
 describe('XxxAnswersPageComponent', () => {
   let component: XxxAnswersPageComponent;

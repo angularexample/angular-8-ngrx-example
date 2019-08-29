@@ -1,18 +1,18 @@
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {ActivatedRoute} from '@angular/router';
-import {RouterTestingModule} from '@angular/router/testing';
-import {Observable, of, throwError} from 'rxjs';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Observable, of, throwError } from 'rxjs';
 
-import {environment} from '@env/environment';
-import {MockActivatedRouteWithQueryParms, mockQueryParamPage, mockQueryParamTitle} from '@app/mocks/angular/mock-activated-route';
-import {MockXxxAlertService, MockXxxDataService, MockXxxEventMgrService, MockXxxStateStoreService} from '@app/xxx-common/test';
-import {XxxAlertService, XxxAlertType, XxxDataService, XxxEventMgrService, XxxEventRoute, XxxStateStoreService} from '@app/xxx-common';
-import {XxxQuestionsPageComponent} from './xxx-questions-page.component';
+import { environment } from '@env/environment';
+import { MockActivatedRouteWithQueryParms, mockQueryParamPage, mockQueryParamTitle } from '@app/mocks/angular/mock-activated-route';
+import { MockXxxAlertService, MockXxxDataService, MockXxxEventMgrService, MockXxxStateStoreService } from '@app/xxx-common/test';
+import { XxxAlertService, XxxAlertType, XxxDataService, XxxEventMgrService, XxxEventRoute, XxxStateStoreService } from '@app/xxx-common';
+import { XxxQuestionsPageComponent } from './xxx-questions-page.component';
 
 describe('XxxQuestionsPageComponent', () => {
   let component: XxxQuestionsPageComponent;

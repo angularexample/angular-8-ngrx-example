@@ -1,7 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-@NgModule({
-})
+@NgModule({})
 
 /**
  * Since this module is empty, you don't actually need to import it anywhere.

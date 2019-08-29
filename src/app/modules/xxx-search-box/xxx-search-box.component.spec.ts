@@ -1,15 +1,13 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {By} from '@angular/platform-browser';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
-import {MockXxxEventMgrService, MockXxxStateStoreService} from '@app/xxx-common/test';
-import {MockXxxSearchService} from '@app/modules/xxx-search/mock-xxx-search.service';
-import {XxxEventMgrService, XxxMessage, XxxMessageService, XxxStateStoreService} from '@app/xxx-common';
-import {XxxSearchService} from '@app/modules/xxx-search/xxx-search.service';
-import {XxxSearchBoxComponent} from './xxx-search-box.component';
+import { MockXxxEventMgrService, MockXxxStateStoreService } from '@app/xxx-common/test';
+import { MockXxxSearchService } from '@app/modules/xxx-search/mock-xxx-search.service';
+import { XxxEventMgrService, XxxMessage, XxxMessageService, XxxStateStoreService } from '@app/xxx-common';
+import { XxxSearchService } from '@app/modules/xxx-search/xxx-search.service';
+import { XxxSearchBoxComponent } from './xxx-search-box.component';
 
 describe('XxxSearchBoxComponent', () => {
   let buttonElement: HTMLButtonElement;

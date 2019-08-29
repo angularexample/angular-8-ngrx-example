@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {XxxAnswersPageComponent} from './xxx-answers-page.component';
+import { XxxAnswersPageComponent } from './xxx-answers-page.component';
 
 const routes: Routes = [
   {path: 'answers/:id', component: XxxAnswersPageComponent}

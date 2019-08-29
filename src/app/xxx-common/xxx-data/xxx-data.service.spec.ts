@@ -1,8 +1,8 @@
-import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
-import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
-import {fakeAsync, TestBed, tick} from '@angular/core/testing';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 
-import {XxxDataService} from './xxx-data.service';
+import { XxxDataService } from './xxx-data.service';
 
 describe('XxxDataService', () => {
   let httpMock: HttpTestingController;

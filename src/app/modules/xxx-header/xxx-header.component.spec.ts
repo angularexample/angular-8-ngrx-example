@@ -1,9 +1,9 @@
-import {CommonModule} from '@angular/common';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { CommonModule } from '@angular/common';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-import {XxxHeaderComponent} from './xxx-header.component';
-import {XxxSearchBoxComponent} from '../xxx-search-box/mock-xxx-search-box.component';
+import { XxxHeaderComponent } from './xxx-header.component';
+import { XxxSearchBoxComponent } from '../xxx-search-box/mock-xxx-search-box.component';
 
 describe('XxxHeaderComponent', () => {
   let component: XxxHeaderComponent;

@@ -1,9 +1,9 @@
-import {ErrorHandler, Injectable} from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 
-import {XxxAlertService} from '../xxx-alert/xxx-alert.service';
-import {XxxAlertType} from '../xxx-alert/xxx-alert.enum';
-import {XxxLogEntry} from '../xxx-log/xxx-log-entry';
-import {XxxLogService} from '../xxx-log/xxx-log.service';
+import { XxxAlertService } from '../xxx-alert/xxx-alert.service';
+import { XxxAlertType } from '../xxx-alert/xxx-alert.enum';
+import { XxxLogEntry } from '../xxx-log/xxx-log-entry';
+import { XxxLogService } from '../xxx-log/xxx-log.service';
 
 /**
  * Note: There is no providedIn or providers for this class
