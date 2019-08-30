@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { XxxMessageModule } from '../xxx-message/xxx-message.module';
+import { XxxAlertModule } from '../xxx-alert/xxx-alert.module';
 
 @NgModule({
-  imports: [XxxMessageModule]
+  imports: [XxxAlertModule]
 })
 
 export class XxxDataResponseInterceptorModule {

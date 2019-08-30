@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '@env/environment';
-import { XxxAlertModule, XxxErrorHandlerModule, XxxLogModule, XxxMessageModule } from '@app/xxx-common';
+import { XxxErrorHandlerModule, XxxLogModule } from '@app/xxx-common';
 import { XxxAnswersPageModule } from '@app/modules/xxx-answers-page/xxx-answers-page.module';
 import { XxxHeaderModule } from '@app/modules/xxx-header/xxx-header.module';
 import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.module';
@@ -29,13 +29,11 @@ import * as fromSearchBox from '@app/modules/xxx-search-box/xxx-search-box.reduc
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    XxxAlertModule,
     XxxAnswersPageModule,
     XxxErrorHandlerModule,
     XxxHeaderModule,
     XxxHomePageModule,
     XxxLogModule,
-    XxxMessageModule,
     XxxQuestionsPageModule,
     XxxSearchModule,
     AppRoutingModule,

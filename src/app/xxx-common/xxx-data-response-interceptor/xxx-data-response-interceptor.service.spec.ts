@@ -2,14 +2,14 @@ import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 
-import { XxxMessageService } from '..';
+import { XxxAlertService } from '..';
 import { XxxDataResponseInterceptor } from './xxx-data-response-interceptor.service';
 
 describe('XxxDataResponseInterceptor', () => {
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
   const mockUrl = 'https://mockurl?param1=1&param2=2';
-  let spyMessageBroadcast: jasmine.Spy;
+  let spyAlert: jasmine.Spy;
   let spyConsoleLog: jasmine.Spy;
 
   // stub dependant class
@@ -23,7 +23,7 @@ describe('XxxDataResponseInterceptor', () => {
   }
 
   beforeEach(() => {
-    let xxxMessageService: XxxMessageService;
+    let xxxAlertService: XxxAlertService;
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
@@ -35,13 +35,13 @@ describe('XxxDataResponseInterceptor', () => {
           useClass: XxxDataResponseInterceptor,
           multi: true
         },
-        XxxMessageService
+        XxxAlertService
       ]
     });
     httpClient = TestBed.get(HttpClient);
     httpMock = TestBed.get(HttpTestingController);
-    xxxMessageService = TestBed.get(XxxMessageService);
-    spyMessageBroadcast = spyOn(xxxMessageService, 'broadcast');
+    xxxAlertService = TestBed.get(XxxAlertService);
+    spyAlert = spyOn(xxxAlertService, 'openAlert');
     spyConsoleLog = spyOn(console, 'log');
   });
 
@@ -64,8 +64,8 @@ describe('XxxDataResponseInterceptor', () => {
       status: 400
     });
     tick();
-    expect(spyMessageBroadcast).toHaveBeenCalled();
-    const args = spyMessageBroadcast.calls.mostRecent().args;
+    expect(spyAlert).toHaveBeenCalled();
+    const args = spyAlert.calls.mostRecent().args;
     const testMessage: XxxMessage = args[0];
     const alertMessage: string = testMessage.payload.alertMessage;
     const isErrorCodeFound = alertMessage.includes('Error Code: 400');
@@ -96,10 +96,9 @@ describe('XxxDataResponseInterceptor', () => {
       status: 0
     });
     tick();
-    expect(spyMessageBroadcast).toHaveBeenCalled();
-    const args = spyMessageBroadcast.calls.mostRecent().args;
-    const testMessage: XxxMessage = args[0];
-    const alertMessage: string = testMessage.payload.alertMessage;
+    expect(spyAlert).toHaveBeenCalled();
+    const args = spyAlert.calls.mostRecent().args;
+    const alertMessage = '';
     expect(alertMessage).toBe('Not connected to internet.');
   }));
 });

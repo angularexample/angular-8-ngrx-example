@@ -37,7 +37,7 @@ export class XxxSearchBoxComponent implements OnDestroy, OnInit {
     this.lastSearchText = this.searchText;
     this.isButtonDisabled = true;
     this.changeDetectorRef.detectChanges();
-    store.dispatch(setSearchText({ searchText: this.searchText }));
+    // store.dispatch(setSearchText({ searchText: this.searchText }));
   }
 
   ngOnDestroy(): void {
