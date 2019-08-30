@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { environment } from '@env/environment';
-import { XxxAlertService, XxxAlertType, XxxDataService, XxxEventMgrService, XxxStateStoreService } from '@app/xxx-common';
+import { XxxAlertService, XxxAlertType, XxxDataService } from '@app/xxx-common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,9 +28,7 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
       private changeDetectorRef: ChangeDetectorRef,
       private router: Router,
       private xxxAlertService: XxxAlertService,
-      private xxxDataService: XxxDataService,
-      private xxxEventMgrService: XxxEventMgrService,
-      private xxxStateStoreService: XxxStateStoreService
+      private xxxDataService: XxxDataService
   ) {
   }
 
@@ -40,7 +38,7 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
   }
 
   ngOnDestroy() {
-    this.subscriptionRouteParam.unsubscribe();
+    // this.subscriptionRouteParam.unsubscribe();
   }
 
   decodeHtmlEntities(text) {
@@ -54,13 +52,13 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
   }
 
   onClickBackToQuestions() {
-    this.xxxEventMgrService.handleEvent('routeQuestions');
+    // this.xxxEventMgrService.handleEvent('routeQuestions');
   }
 
   private checkForQuestions() {
-    if (this.xxxStateStoreService.getItem('questionsRoute')) {
-      this.isQuestions = true;
-    }
+    // if (this.xxxStateStoreService.getItem('questionsRoute')) {
+    //   this.isQuestions = true;
+    // }
   }
 
   private getQuestionId() {

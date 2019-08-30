@@ -9,8 +9,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of, throwError } from 'rxjs';
 
 import { MockActivatedRouteWithId, mockRouteParamId } from '@app/mocks/angular/mock-activated-route';
-import { MockXxxAlertService, MockXxxDataService, MockXxxEventMgrService, MockXxxStateStoreService } from '@app/xxx-common/test';
-import { XxxAlertService, XxxDataService, XxxEventMgrService, XxxStateStoreService } from '@app/xxx-common';
+import { MockXxxAlertService, MockXxxDataService } from '@app/xxx-common/test';
+import { XxxAlertService, XxxDataService } from '@app/xxx-common';
 import { XxxAnswersPageComponent } from './xxx-answers-page.component';
 
 describe('XxxAnswersPageComponent', () => {
@@ -19,13 +19,8 @@ describe('XxxAnswersPageComponent', () => {
   let route: ActivatedRoute;
   let spyAlertService: jasmine.Spy;
   let spyDataService: jasmine.Spy;
-  let spyEventMgrService: jasmine.Spy;
-  let spyStateStoreGetItem: jasmine.Spy;
-  let spyStateStorePutItem: jasmine.Spy;
   let xxxAlertService: XxxAlertService;
   let xxxDataService: XxxDataService;
-  let xxxEventMgrService: XxxEventMgrService;
-  let xxxStateStoreService: XxxStateStoreService;
 
   const mockQuestionData = {
     items: [
@@ -62,9 +57,7 @@ describe('XxxAnswersPageComponent', () => {
       providers: [
         {provide: ActivatedRoute, useClass: MockActivatedRouteWithId},
         {provide: XxxAlertService, useClass: MockXxxAlertService},
-        {provide: XxxDataService, useClass: MockXxxDataService},
-        {provide: XxxEventMgrService, useClass: MockXxxEventMgrService},
-        {provide: XxxStateStoreService, useClass: MockXxxStateStoreService}
+        {provide: XxxDataService, useClass: MockXxxDataService}
       ]
     }).compileComponents();
   }));
@@ -74,11 +67,6 @@ describe('XxxAnswersPageComponent', () => {
     spyAlertService = spyOn(xxxAlertService, 'openAlert');
     xxxDataService = TestBed.get(XxxDataService);
     spyDataService = spyOn(xxxDataService, 'getData').and.callThrough();
-    xxxEventMgrService = TestBed.get(XxxEventMgrService);
-    spyEventMgrService = spyOn(xxxEventMgrService, 'handleEvent');
-    xxxStateStoreService = TestBed.get(XxxStateStoreService);
-    spyStateStoreGetItem = spyOn(xxxStateStoreService, 'getItem');
-    spyStateStorePutItem = spyOn(xxxStateStoreService, 'putItem');
     route = TestBed.get(ActivatedRoute);
   });
 
@@ -211,29 +199,19 @@ describe('XxxAnswersPageComponent', () => {
     tick();
     tick();
     component.onClickBackToQuestions();
-    expect(spyEventMgrService).toHaveBeenCalled();
-    const eventId = spyEventMgrService.calls.mostRecent().args[0];
-    expect(eventId).toEqual('routeQuestions');
   }));
 
   it('should run checkForQuestions on create with no value', fakeAsync(() => {
     createComponent();
     tick();
     tick();
-    expect(spyStateStoreGetItem).toHaveBeenCalled();
-    const stateKey = spyStateStoreGetItem.calls.mostRecent().args[0];
-    expect(stateKey).toEqual('questionsRoute');
     expect(component.isQuestions).toBeFalsy();
   }));
 
   it('should run checkForQuestions on create with value', fakeAsync(() => {
-    spyStateStoreGetItem.and.returnValue('x');
     createComponent();
     tick();
     tick();
-    expect(spyStateStoreGetItem).toHaveBeenCalled();
-    const stateKey = spyStateStoreGetItem.calls.mostRecent().args[0];
-    expect(stateKey).toEqual('questionsRoute');
     expect(component.isQuestions).toBeTruthy();
   }));
 });

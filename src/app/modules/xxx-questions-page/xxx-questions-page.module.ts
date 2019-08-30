@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { XxxAlertModule, XxxDataModule, XxxEventMgrModule, XxxStateStoreModule } from '@app/xxx-common';
+import { XxxAlertModule, XxxDataModule } from '@app/xxx-common';
 import { XxxQuestionsPageComponent } from './xxx-questions-page.component';
 import { XxxQuestionsPageRoutingModule } from './xxx-questions-page-routing.module';
 
@@ -16,8 +16,6 @@ import { XxxQuestionsPageRoutingModule } from './xxx-questions-page-routing.modu
     MatProgressSpinnerModule,
     XxxAlertModule,
     XxxDataModule,
-    XxxEventMgrModule,
-    XxxStateStoreModule,
     XxxQuestionsPageRoutingModule
   ]
 })

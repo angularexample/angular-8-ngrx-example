@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { EffectsModule } from '@ngrx/effects';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -8,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { AppEffects } from './app.effects';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '@env/environment';
 import { XxxAlertModule, XxxErrorHandlerModule, XxxLogModule, XxxMessageModule } from '@app/xxx-common';
@@ -16,8 +18,8 @@ import { XxxHeaderModule } from '@app/modules/xxx-header/xxx-header.module';
 import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.module';
 import { XxxQuestionsPageModule } from '@app/modules/xxx-questions-page/xxx-questions-page.module';
 import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
-import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './app.effects';
+
+import * as fromSearchBox from '@app/modules/xxx-search-box/xxx-search-box.reducer';
 
 @NgModule({
   bootstrap: [AppComponent],

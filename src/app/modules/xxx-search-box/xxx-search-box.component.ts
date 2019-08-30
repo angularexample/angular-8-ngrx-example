@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 import { Subscription } from 'rxjs';
 
 import { XxxSearchService } from '@app/modules/xxx-search/xxx-search.service';
-import { XxxEventMgrService, XxxMessageService, XxxStateStoreService } from '@app/xxx-common';
+import { setSearchText } from '@app/modules/xxx-search-box/xxx-search-box.actions';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,15 +20,12 @@ export class XxxSearchBoxComponent implements OnDestroy, OnInit {
 
   constructor(
       private changeDetectorRef: ChangeDetectorRef,
-      private xxxEventMgrService: XxxEventMgrService,
-      private xxxMessageService: XxxMessageService,
-      private xxxSearchService: XxxSearchService,
-      private xxxStateStoreService: XxxStateStoreService
+      private xxxSearchService: XxxSearchService
   ) {
   }
 
   ngOnInit(): void {
-    this.subscribeToMessages();
+    // this.subscribeToMessages();
   }
 
   onInputKeyUp() {
@@ -40,23 +37,22 @@ export class XxxSearchBoxComponent implements OnDestroy, OnInit {
     this.lastSearchText = this.searchText;
     this.isButtonDisabled = true;
     this.changeDetectorRef.detectChanges();
-    this.xxxStateStoreService.putItem('searchText', this.searchText);
-    this.xxxEventMgrService.handleEvent('searchBox.search');
+    store.dispatch(setSearchText({ searchText: this.searchText }));
   }
 
   ngOnDestroy(): void {
-    this.subscriptionButtonEnable.unsubscribe();
+    // this.subscriptionButtonEnable.unsubscribe();
   }
 
   private checkForChangedSearchText() {
     this.isSearchTextNotChanged = (this.searchText === this.lastSearchText);
   }
 
-  private subscribeToMessages() {
-    this.subscriptionButtonEnable = this.xxxMessageService.subscribe('searchButtonEnable', () => {
-      this.isButtonDisabled = false;
-      this.checkForChangedSearchText();
-      this.changeDetectorRef.detectChanges();
-    });
-  }
+  // private subscribeToMessages() {
+  //   this.subscriptionButtonEnable = this.xxxMessageService.subscribe('searchButtonEnable', () => {
+  //     this.isButtonDisabled = false;
+  //     this.checkForChangedSearchText();
+  //     this.changeDetectorRef.detectChanges();
+  //   });
+  // }
 }

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { environment } from '@env/environment';
-import { XxxAlertService, XxxAlertType, XxxDataService, XxxEventMgrService, XxxEventRoute, XxxStateStoreService } from '@app/xxx-common';
+import { XxxAlertService, XxxAlertType, XxxDataService} from '@app/xxx-common';
 
 @Component({
   selector: 'xxx-questions-page',
@@ -27,9 +27,7 @@ export class XxxQuestionsPageComponent implements OnDestroy, OnInit {
       private route: ActivatedRoute,
       private changeDetectorRef: ChangeDetectorRef,
       private xxxAlertService: XxxAlertService,
-      private xxxDataService: XxxDataService,
-      private xxxEventMgrService: XxxEventMgrService,
-      private xxxStateStoreService: XxxStateStoreService
+      private xxxDataService: XxxDataService
   ) {
   }
 
@@ -52,46 +50,38 @@ export class XxxQuestionsPageComponent implements OnDestroy, OnInit {
   }
 
   goToFirstPage() {
-    const eventRoute: XxxEventRoute = {
-      url: [environment.url.questions],
-      queryParams: {
-        title: this.searchText
-      }
-    };
-    this.xxxStateStoreService.putItem('questionsRoute', eventRoute);
-    this.xxxEventMgrService.handleEvent('routeQuestions');
+    // const eventRoute: XxxEventRoute = {
+    //   url: [environment.url.questions],
+    //   queryParams: {
+    //     title: this.searchText
+    //   }
+    // };
   }
 
   goToPreviousPage() {
-    const eventRoute: XxxEventRoute = {
-      url: [environment.url.questions],
-      queryParams: {
-        title: this.searchText,
-        page: (this.pageNumber > 2) ? this.pageNumber - 1 : null
-      }
-    };
-    this.xxxStateStoreService.putItem('questionsRoute', eventRoute);
-    this.xxxEventMgrService.handleEvent('routeQuestions');
+    // const eventRoute: XxxEventRoute = {
+    //   url: [environment.url.questions],
+    //   queryParams: {
+    //     title: this.searchText,
+    //     page: (this.pageNumber > 2) ? this.pageNumber - 1 : null
+    //   }
+    // };
   }
 
   goToNextPage() {
-    const eventRoute: XxxEventRoute = {
-      url: [environment.url.questions],
-      queryParams: {
-        title: this.searchText,
-        page: this.pageNumber + 1
-      }
-    };
-    this.xxxStateStoreService.putItem('questionsRoute', eventRoute);
-    this.xxxEventMgrService.handleEvent('routeQuestions');
+    // const eventRoute: XxxEventRoute = {
+    //   url: [environment.url.questions],
+    //   queryParams: {
+    //     title: this.searchText,
+    //     page: this.pageNumber + 1
+    //   }
+    // };
   }
 
   questionOnClick(questionId) {
-    const eventRoute: XxxEventRoute = {
-      url: [environment.url.answers + '/' + questionId]
-    };
-    this.xxxStateStoreService.putItem('answersRoute', eventRoute);
-    this.xxxEventMgrService.handleEvent('routeAnswers');
+    // const eventRoute: XxxEventRoute = {
+    //   url: [environment.url.answers + '/' + questionId]
+    // };
   }
 
   private subscribeToRouteParams() {
@@ -167,6 +157,5 @@ export class XxxQuestionsPageComponent implements OnDestroy, OnInit {
   }
 
   private searchDone() {
-    this.xxxEventMgrService.handleEvent('questionsSearchDone');
   }
 }
