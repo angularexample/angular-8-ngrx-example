@@ -19,8 +19,6 @@ import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.modu
 import { XxxQuestionsPageModule } from '@app/modules/xxx-questions-page/xxx-questions-page.module';
 import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
 
-import * as fromSearchBox from '@app/modules/xxx-search-box/xxx-search-box.reducer';
-
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
