@@ -18,6 +18,7 @@ import { XxxHeaderModule } from '@app/modules/xxx-header/xxx-header.module';
 import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.module';
 import { XxxQuestionsPageModule } from '@app/modules/xxx-questions-page/xxx-questions-page.module';
 import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -39,13 +40,12 @@ import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true,
+        strictActionImmutability: true
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' })
   ]
 })
-
-export class AppModule {
-}
+export class AppModule {}
