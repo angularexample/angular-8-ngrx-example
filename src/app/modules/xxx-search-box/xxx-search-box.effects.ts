@@ -8,6 +8,7 @@ import { environment } from '@env/environment';
 
 @Injectable()
 export class XxxSearchBoxEffects {
+  // on search text change navigate to questions page
   setSearchText$ = createEffect(
     () =>
       this.actions$.pipe(
