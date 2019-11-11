@@ -7,17 +7,18 @@ import { metaReducers, reducers } from './reducers';
 import { NgModule } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { AppRoutingModule } from './app-routing.module';
+import { CustomSerializer } from '@app/router/custom-route-serializer';
 import { environment } from '@env/environment';
 import { XxxErrorHandlerModule, XxxLogModule } from '@app/xxx-common';
 import { XxxAnswersPageModule } from '@app/modules/xxx-answers-page/xxx-answers-page.module';
 import { XxxHeaderModule } from '@app/modules/xxx-header/xxx-header.module';
 import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.module';
 import { XxxQuestionsPageModule } from '@app/modules/xxx-questions-page/xxx-questions-page.module';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -43,7 +44,10 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
-    StoreRouterConnectingModule.forRoot({ stateKey: 'router' })
+    StoreRouterConnectingModule.forRoot({
+      serializer: CustomSerializer,
+      stateKey: 'router'
+    })
   ]
 })
 export class AppModule {}

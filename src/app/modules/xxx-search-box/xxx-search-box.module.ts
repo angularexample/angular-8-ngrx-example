@@ -3,8 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
 import { XxxSearchBoxComponent } from './xxx-search-box.component';
+import { EffectsModule } from '@ngrx/effects';
+import { XxxSearchBoxEffects } from './xxx-search-box.effects';
 
 @NgModule({
   declarations: [XxxSearchBoxComponent],
@@ -13,9 +14,7 @@ import { XxxSearchBoxComponent } from './xxx-search-box.component';
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    XxxSearchModule
+    EffectsModule.forFeature([XxxSearchBoxEffects])
   ]
 })
-
-export class XxxSearchBoxModule {
-}
+export class XxxSearchBoxModule {}

@@ -8,6 +8,7 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
+  router: routerReducer,
   searchBox: fromSearchBox.reducer
 };
 
