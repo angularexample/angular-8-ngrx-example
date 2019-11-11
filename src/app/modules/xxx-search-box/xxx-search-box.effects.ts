@@ -8,6 +8,7 @@ import { environment } from '@env/environment';
 
 @Injectable()
 export class XxxSearchBoxEffects {
+  constructor(private actions$: Actions, private router: Router) {}
   // on search text change navigate to questions page
   setSearchText$ = createEffect(
     () =>
@@ -23,6 +24,4 @@ export class XxxSearchBoxEffects {
       ),
     { dispatch: false }
   );
-
-  constructor(private actions$: Actions, private router: Router) {}
 }
