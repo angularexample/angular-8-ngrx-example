@@ -17,7 +17,6 @@ import { XxxAnswersPageModule } from '@app/modules/xxx-answers-page/xxx-answers-
 import { XxxHeaderModule } from '@app/modules/xxx-header/xxx-header.module';
 import { XxxHomePageModule } from '@app/modules/xxx-home-page/xxx-home-page.module';
 import { XxxQuestionsPageModule } from '@app/modules/xxx-questions-page/xxx-questions-page.module';
-import { XxxSearchModule } from '@app/modules/xxx-search/xxx-search.module';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
@@ -34,7 +33,6 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     XxxHomePageModule,
     XxxLogModule,
     XxxQuestionsPageModule,
-    XxxSearchModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
