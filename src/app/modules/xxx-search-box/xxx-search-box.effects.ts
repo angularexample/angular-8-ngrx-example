@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Router } from '@angular/router';
-import { catchError, map, mergeMap, tap } from 'rxjs/operators';
-import { EMPTY } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
 import * as fromSearchBox from '@app/modules/xxx-search-box/xxx-search-box.reducer';
 import { environment } from '@env/environment';
 
 @Injectable()
 export class XxxSearchBoxEffects {
-  constructor(private actions$: Actions, private router: Router) {}
-
   setSearchText$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -24,4 +22,6 @@ export class XxxSearchBoxEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(private actions$: Actions, private router: Router) {}
 }
