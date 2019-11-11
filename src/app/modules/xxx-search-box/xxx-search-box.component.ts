@@ -1,8 +1,14 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 
-import { XxxSearchService } from '@app/modules/xxx-search/xxx-search.service';
 import { setSearchText } from '@app/modules/xxx-search-box/xxx-search-box.actions';
+import { Store, select } from '@ngrx/store';
+import * as fromSearchBox from '@app/modules/xxx-search-box/xxx-search-box.reducer';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,19 +16,16 @@ import { setSearchText } from '@app/modules/xxx-search-box/xxx-search-box.action
   templateUrl: './xxx-search-box.component.html',
   styleUrls: ['./xxx-search-box.component.scss']
 })
-
 export class XxxSearchBoxComponent implements OnDestroy, OnInit {
   isButtonDisabled = false;
   isSearchTextNotChanged = true;
   searchText: string;
-  subscriptionButtonEnable: Subscription;
   private lastSearchText: string = null;
 
   constructor(
-      private changeDetectorRef: ChangeDetectorRef,
-      private xxxSearchService: XxxSearchService
-  ) {
-  }
+    private changeDetectorRef: ChangeDetectorRef,
+    private store: Store<{ searchBox: fromSearchBox.State }>
+  ) {}
 
   ngOnInit(): void {
     // this.subscribeToMessages();
@@ -37,7 +40,7 @@ export class XxxSearchBoxComponent implements OnDestroy, OnInit {
     this.lastSearchText = this.searchText;
     this.isButtonDisabled = true;
     this.changeDetectorRef.detectChanges();
-    // store.dispatch(setSearchText({ searchText: this.searchText }));
+    this.store.dispatch(setSearchText({ searchText: this.searchText }));
   }
 
   ngOnDestroy(): void {
@@ -45,7 +48,7 @@ export class XxxSearchBoxComponent implements OnDestroy, OnInit {
   }
 
   private checkForChangedSearchText() {
-    this.isSearchTextNotChanged = (this.searchText === this.lastSearchText);
+    this.isSearchTextNotChanged = this.searchText === this.lastSearchText;
   }
 
   // private subscribeToMessages() {

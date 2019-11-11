@@ -14,10 +14,19 @@ export const initialState: State = {
 };
 
 const searchBoxReducer = createReducer(
-    initialState,
-    on(SearchBoxActions.setIsSearchButtonDisabled, state => ({...state, isSearchButtonDisabled: state.isSearchButtonDisabled})),
-    on(SearchBoxActions.setPreviousSearchText, state => ({...state, previousSearchText: state.previousSearchText})),
-    on(SearchBoxActions.setSearchText, state => ({...state, searchText: state.searchText})),
+  initialState,
+  on(SearchBoxActions.setIsSearchButtonDisabled, (state, data) => ({
+    ...state,
+    isSearchButtonDisabled: data.isSearchButtonDisabled
+  })),
+  on(SearchBoxActions.setPreviousSearchText, (state, data) => ({
+    ...state,
+    previousSearchText: data.previousSearchText
+  })),
+  on(SearchBoxActions.setSearchText, (state, data) => ({
+    ...state,
+    searchText: data.searchText
+  }))
 );
 
 export function reducer(state: State | undefined, action: Action) {
