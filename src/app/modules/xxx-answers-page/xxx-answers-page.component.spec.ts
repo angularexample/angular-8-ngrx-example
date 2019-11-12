@@ -1,4 +1,10 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick
+} from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,7 +14,10 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, throwError } from 'rxjs';
 
-import { MockActivatedRouteWithId, mockRouteParamId } from '@app/mocks/angular/mock-activated-route';
+import {
+  MockActivatedRouteWithId,
+  mockRouteParamId
+} from '@app/mocks/angular/mock-activated-route';
 import { MockXxxAlertService, MockXxxDataService } from '@app/xxx-common/test';
 import { XxxAlertService, XxxDataService } from '@app/xxx-common';
 import { XxxAnswersPageComponent } from './xxx-answers-page.component';
@@ -32,9 +41,7 @@ describe('XxxAnswersPageComponent', () => {
   };
 
   const mockAnswersData = {
-    items: [
-      {answer_id: 'A123'}
-    ]
+    items: [{ answer_id: 'A123' }]
   };
 
   function createComponent() {
@@ -55,9 +62,9 @@ describe('XxxAnswersPageComponent', () => {
         RouterTestingModule
       ],
       providers: [
-        {provide: ActivatedRoute, useClass: MockActivatedRouteWithId},
-        {provide: XxxAlertService, useClass: MockXxxAlertService},
-        {provide: XxxDataService, useClass: MockXxxDataService}
+        { provide: ActivatedRoute, useClass: MockActivatedRouteWithId },
+        { provide: XxxAlertService, useClass: MockXxxAlertService },
+        { provide: XxxDataService, useClass: MockXxxDataService }
       ]
     }).compileComponents();
   }));
@@ -152,7 +159,7 @@ describe('XxxAnswersPageComponent', () => {
 
   it('should set flags when get question data throws error', fakeAsync(() => {
     spyDataService.and.callFake(() => {
-      return throwError({status: 404});
+      return throwError({ status: 404 });
     });
     createComponent();
     tick();
@@ -164,7 +171,7 @@ describe('XxxAnswersPageComponent', () => {
   it('should set flags when get answers data throws error', fakeAsync(() => {
     spyDataService.and.callFake((url: string) => {
       if (url.includes('answers')) {
-        return throwError({status: 404});
+        return throwError({ status: 404 });
       } else {
         return of(mockAnswersData);
       }

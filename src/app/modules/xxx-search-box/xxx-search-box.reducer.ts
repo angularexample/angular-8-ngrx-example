@@ -1,6 +1,8 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as SearchBoxActions from './xxx-search-box.actions';
 
+export const xxxSearchBoxFeatureKey = 'xxxSearchBox';
+
 export interface State {
   isSearchButtonDisabled: boolean;
   previousSearchText: string;

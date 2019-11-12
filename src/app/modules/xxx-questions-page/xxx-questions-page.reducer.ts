@@ -1,14 +1,24 @@
-import { Action } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
+import * as QuestionsPageActions from './xxx-questions-page.actions';
 
 export const xxxQuestionsPageFeatureKey = 'xxxQuestionsPage';
 
-export interface State {}
+export interface State {
+  isQuestions: boolean;
+}
 
-export const initialState: State = {};
+export const initialState: State = {
+  isQuestions: false
+};
 
-export function reducer(state = initialState, action: Action): State {
-  switch (action.type) {
-    default:
-      return state;
-  }
+const questionsPageReducer = createReducer(
+  initialState,
+  on(QuestionsPageActions.setIsQuestions, (state, data) => ({
+    ...state,
+    isQuestions: data.isQuestions
+  }))
+);
+
+export function reducer(state: State | undefined, action: Action) {
+  return questionsPageReducer(state, action);
 }

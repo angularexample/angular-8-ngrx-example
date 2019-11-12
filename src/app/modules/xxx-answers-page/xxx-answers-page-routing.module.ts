@@ -4,16 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { XxxAnswersPageComponent } from './xxx-answers-page.component';
 
 const routes: Routes = [
-  {path: 'answers/:id', component: XxxAnswersPageComponent}
+  { path: 'answers/:id', component: XxxAnswersPageComponent }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class XxxAnswersPageRoutingModule {
-}
+export class XxxAnswersPageRoutingModule {}

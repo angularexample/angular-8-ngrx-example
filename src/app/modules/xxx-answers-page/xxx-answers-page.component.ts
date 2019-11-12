@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -11,7 +17,6 @@ import { XxxAlertService, XxxAlertType, XxxDataService } from '@app/xxx-common';
   styleUrls: ['./xxx-answers-page.component.scss'],
   templateUrl: './xxx-answers-page.component.html'
 })
-
 export class XxxAnswersPageComponent implements OnDestroy, OnInit {
   answers: any = [];
   isBusy = false;
@@ -24,13 +29,12 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
   private subscriptionRouteParam: Subscription;
 
   constructor(
-      private route: ActivatedRoute,
-      private changeDetectorRef: ChangeDetectorRef,
-      private router: Router,
-      private xxxAlertService: XxxAlertService,
-      private xxxDataService: XxxDataService
-  ) {
-  }
+    private route: ActivatedRoute,
+    private changeDetectorRef: ChangeDetectorRef,
+    private router: Router,
+    private xxxAlertService: XxxAlertService,
+    private xxxDataService: XxxDataService
+  ) {}
 
   ngOnInit(): void {
     this.checkForQuestions();
@@ -42,7 +46,7 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
   }
 
   decodeHtmlEntities(text) {
-    if ((text === undefined) || (text === '')) {
+    if (text === undefined || text === '') {
       return '';
     }
     const doc = new DOMParser().parseFromString(text, 'text/html');
@@ -65,7 +69,7 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
     this.questionId = '';
     this.subscriptionRouteParam = this.route.params.subscribe(params => {
       this.questionId = params['id'];
-      if ((typeof this.questionId === 'string') && (this.questionId.length > 0)) {
+      if (typeof this.questionId === 'string' && this.questionId.length > 0) {
         this.getQuestion();
       }
     });
@@ -84,15 +88,18 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
     url += '&order=desc';
     url += '&sort=activity';
     url += '&site=stackoverflow';
-    this.xxxDataService.getData(url)
-        .subscribe(result => this.onSuccessGetQuestion(result),
-            () => this.onErrorGetQuestion());
+    this.xxxDataService.getData(url).subscribe(
+      result => this.onSuccessGetQuestion(result),
+      () => this.onErrorGetQuestion()
+    );
   }
 
   private onSuccessGetQuestion(result) {
-    if ((result.hasOwnProperty('items'))
-        && (typeof result.items === 'object')
-        && (result.items.length > 0)) {
+    if (
+      result.hasOwnProperty('items') &&
+      typeof result.items === 'object' &&
+      result.items.length > 0
+    ) {
       this.question = result.items[0];
       this.getAnswers();
     } else {
@@ -125,16 +132,19 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
     url += '&order=desc';
     url += '&sort=votes';
     url += '&filter=withbody';
-    this.xxxDataService.getData(url)
-        .subscribe(result => this.onSuccessGetAnswers(result),
-            () => this.onErrorGetAnswers());
+    this.xxxDataService.getData(url).subscribe(
+      result => this.onSuccessGetAnswers(result),
+      () => this.onErrorGetAnswers()
+    );
   }
 
   private onSuccessGetAnswers(result) {
     this.isBusy = false;
-    if ((result.hasOwnProperty('items'))
-        && (typeof result.items === 'object')
-        && (result.items.length > 0)) {
+    if (
+      result.hasOwnProperty('items') &&
+      typeof result.items === 'object' &&
+      result.items.length > 0
+    ) {
       this.answers = result.items;
       this.isResult = true;
     } else {

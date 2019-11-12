@@ -8,12 +8,6 @@ import { XxxAnswersPageRoutingModule } from './xxx-answers-page-routing.module';
 @NgModule({
   declarations: [XxxAnswersPageComponent],
   exports: [XxxAnswersPageComponent],
-  imports: [
-    CommonModule,
-    MatProgressSpinnerModule,
-    XxxAnswersPageRoutingModule
-  ]
+  imports: [CommonModule, MatProgressSpinnerModule, XxxAnswersPageRoutingModule]
 })
-
-export class XxxAnswersPageModule {
-}
+export class XxxAnswersPageModule {}
