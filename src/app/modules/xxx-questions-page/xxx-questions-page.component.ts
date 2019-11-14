@@ -154,7 +154,6 @@ export class XxxQuestionsPageComponent implements OnDestroy, OnInit {
       result.hasOwnProperty('has_more') &&
       typeof result.has_more === 'boolean' &&
       result.has_more;
-    this.searchDone();
     this.changeDetectorRef.detectChanges();
   }
 
@@ -163,8 +162,5 @@ export class XxxQuestionsPageComponent implements OnDestroy, OnInit {
     this.isBusy = false;
     this.isError = true;
     this.changeDetectorRef.detectChanges();
-    this.searchDone();
   }
-
-  private searchDone() {}
 }
