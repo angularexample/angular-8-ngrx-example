@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
 
 import { environment } from '@env/environment';
 import { XxxAlertService, XxxAlertType, XxxDataService } from '@app/xxx-common';
+import { Store } from '@ngrx/store';
+import * as fromSearchBox from '@app/modules/xxx-search-box/xxx-search-box.reducer';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,28 +23,30 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
   answers: any = [];
   isBusy = false;
   isError = false;
-  isQuestions = false;
+  isSearchText = false;
   isResult = false;
   question: any = {};
   private apiKey = 'U4DMV*8nvpm3EOpvf69Rxw((';
   private questionId: string;
+  private searchText = '';
   private subscriptionRouteParam: Subscription;
 
   constructor(
-    private route: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef,
+    private route: ActivatedRoute,
     private router: Router,
+    private store: Store<{ searchBox: fromSearchBox.State }>,
     private xxxAlertService: XxxAlertService,
     private xxxDataService: XxxDataService
   ) {}
 
   ngOnInit(): void {
-    this.checkForQuestions();
+    this.checkForSearchText();
     this.getQuestionId();
   }
 
   ngOnDestroy() {
-    // this.subscriptionRouteParam.unsubscribe();
+    this.subscriptionRouteParam.unsubscribe();
   }
 
   decodeHtmlEntities(text) {
@@ -59,8 +63,9 @@ export class XxxAnswersPageComponent implements OnDestroy, OnInit {
     // this.xxxEventMgrService.handleEvent('routeQuestions');
   }
 
-  private checkForQuestions() {
-    // if (this.xxxStateStoreService.getItem('questionsRoute')) {
+  private checkForSearchText() {
+    // If there is search text then we can navigate back to questions.
+    // if (this.store.) {
     //   this.isQuestions = true;
     // }
   }
